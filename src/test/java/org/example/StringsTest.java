@@ -1,6 +1,6 @@
 package org.example;
 
-import org.junit.jupiter.api.Assertions;
+import static org.junit.jupiter.api.Assertions.*;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.CsvFileSource;
@@ -15,7 +15,7 @@ public class StringsTest {
     @ValueSource(strings = {"apple", "/", "0"})
     @DisplayName("Assert string is not blank")
     void notBlankString(String input) {
-        Assertions.assertTrue(str.isNotBlank(input),
+        assertTrue(str.isNotBlank(input),
                 "'Assert string is not blank' test failed");
     }
 
@@ -24,7 +24,7 @@ public class StringsTest {
     @DisplayName("Assert string is converted to lower case")
     void lowerCaseStringCsvStructure(String input, String expected) {
         String actual = input.toLowerCase();
-        Assertions.assertEquals(expected, actual);
+        assertEquals(expected, actual);
     }
 
     @ParameterizedTest
@@ -32,6 +32,6 @@ public class StringsTest {
     @DisplayName("Assert string is converted to lower case")
     void lowerCaseStringCsvFile(String input, String expected) {
         String actual = input.toLowerCase();
-        Assertions.assertEquals(expected, actual);
+        assertEquals(expected, actual);
     }
 }
